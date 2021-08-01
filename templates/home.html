@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<!-- <div id="brandname">
+			Machine Learning App with Flask
+		</div> -->
+		<h1>Predicting popularity of reddit posts</h1>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter the Title of reddit post</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="title" rows="6" cols="50"></textarea><br>
+		<input class="form-input" type="text" name="upvote_ratio" placeholder="Upvote_ratio"><br>
+        <input class="form-input" type="text" name="gilded" placeholder="Gilded"><br>
+        <input class="form-input" type="text" name="num_comments" placeholder="Number_of_Comments"><br>
+        <input class="form-input" type="text" name="ups" placeholder="ups"><br>
+        <input type="submit" class="my-cta-button" value="Predict">
+
+		
+		
+	</form>
+	<br>
+    <br>
+
+    <h3>{{ prediction_text }}</h3>
+
+    <br>
+    <br>
+		
+	</div>
+
+	
+	
+
+</body>
+</html>
